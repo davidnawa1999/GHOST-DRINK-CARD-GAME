@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ตัวนับจำนวนไพ่ -->
+    <div id="counter" class="counter">0/54</div>
+
+    <!-- โซนไพ่ -->
+    <div id="cardContainer" class="card-container">
+        <img id="cardImage" src="images/back.png" class="card">
+    </div>
+
+    <!-- ปุ่มเปิดไพ่ -->
+    <button id="flipButton" class="btn">เปิดไพ่</button>
+
+    <!-- ปุ่มใบต่อไป -->
+    <button id="nextButton" class="btn">ใบต่อไป</button>
+
+    <!-- หน้าจอ FINISH -->
+    <div id="finishScreen" class="finish-screen hidden">
+        <h1>FINISH!</h1>
+        <button id="playAgain" class="btn">เล่นใหม่</button>
+    </div>
+
+    <!-- กล่อง Mini Game -->
+    <div id="miniGameBox" class="mini-game hidden">
+        <div class="mini-game-content">
+            <span id="closeMiniGame" class="close-btn">X</span>
+            <h2 id="miniGameTitle"></h2>
+            <p id="miniGameDesc"></p>
+        </div>
+    </div>
+
+    <!-- เสียง -->
+    <audio id="flipSound" src="sounds/flip.mp3" preload="auto"></audio>
+    <audio id="shuffleSound" src="sounds/shuffle.mp3" preload="auto"></audio>
+    <audio id="finishSound" src="sounds/finish.mp3" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
