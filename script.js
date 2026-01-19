@@ -59,8 +59,12 @@ document.addEventListener("DOMContentLoaded", () => {
     allAssets.forEach(src => {
         if (src.endsWith(".mp3")) {
             const audio = new Audio();
-            audio.src = src;
-            audio.addEventListener("canplaythrough", assetLoaded, { once: true });
+audio.src = src;
+
+// iOS ไม่ยิง canplaythrough ก่อน user interaction
+// ถือว่าโหลดเสร็จทันที
+assetLoaded();
+
         } else {
             const img = new Image();
             img.src = src;
@@ -355,3 +359,4 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 });
+
