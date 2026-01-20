@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHOST DRINK CARD GAME</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- PWA / Icon -->
+    <link rel="apple-touch-icon" href="images/icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" type="image/png" href="images/icon.png">
+</head>
+<body>
+
+<!-- ================= LOADING SCREEN ================= -->
+<div id="loadingScreen" class="loading-screen">
+    <div class="loading-box">
+        <div class="loading-text">LOADING...</div>
+        <div class="loading-bar">
+            <div id="loadingFill" class="loading-fill"></div>
+        </div>
+        <div id="loadingPercent" class="loading-percent">0%</div>
+    </div>
+</div>
+
+<!-- ================= START SCREEN ================= -->
+<div id="startScreen" class="start-screen hidden">
+    <div class="card-container">
+        <img src="images/back.png" class="card">
+    </div>
+    <button id="startGame" class="btn">เริ่มเกม</button>
+</div>
+
+<!-- ================= GAME SCREEN ================= -->
+<div id="gameScreen" class="game-screen hidden">
+
+    <!-- Counter -->
+    <div id="counter" class="counter">0/54</div>
+
+    <!-- Card -->
+    <div class="card-container">
+        <img id="cardImage" src="images/back.png" class="card">
+    </div>
+
+    <!-- Controls -->
+    <button id="flipButton" class="btn">เปิดไพ่</button>
+    <button id="nextButton" class="btn">ใบต่อไป</button>
+
+</div>
+
+<!-- ================= FINISH SCREEN ================= -->
+<div id="finishScreen" class="finish-screen hidden">
+    <h1>FINISH!</h1>
+    <button id="playAgain" class="btn">PLAY AGAIN</button>
+</div>
+
+<!-- ================= MINI GAME ================= -->
+<div id="miniGameBox" class="mini-game hidden">
+    <div class="mini-game-content">
+        <span id="closeMiniGame" class="close-btn">X</span>
+        <h2 id="miniGameTitle"></h2>
+        <p id="miniGameDesc"></p>
+        <button id="miniActionBtn" class="mini-btn hidden"></button>
+    </div>
+</div>
+
+<!-- ================= DICE GAME ================= -->
+<div id="diceBox" class="dice-box hidden">
+    <div class="dice-content">
+        <span id="closeDice" class="close-btn disabled">X</span>
+        <h2>กดปุ่ม ROLL DICE เพื่อเขย่าเต๋า</h2>
+
+        <div class="dice-area">
+            <img id="dice1" src="images/dice1.png" class="dice-img">
+            <img id="dice2" src="images/dice1.png" class="dice-img">
+        </div>
+
+        <button id="startDiceRoll" class="mini-btn">ROLL DICE</button>
+    </div>
+</div>
+
+<!-- Dice Result -->
+<div id="diceResultBox" class="result-box hidden">
+    <img id="diceResultImage" class="result-img">
+</div>
+
+<!-- ================= NUMBER GAME ================= -->
+<div id="numberBox" class="number-box hidden">
+    <div class="number-content">
+        <span id="closeNumber" class="close-btn">X</span>
+        <h2>กด Spin เพื่อสุ่มตัวเลข</h2>
+        <img id="numberImage" src="images/question.png" class="number-img">
+        <button id="startSpin" class="mini-btn">Spin</button>
+    </div>
+</div>
+
+<!-- ================= SOUND ================= -->
+<audio id="flipSound" src="sounds/flip.mp3" preload="auto"></audio>
+<audio id="shuffleSound" src="sounds/shuffle.mp3" preload="auto"></audio>
+<audio id="finishSound" src="sounds/finish.mp3" preload="auto"></audio>
+<audio id="diceSound" src="sounds/dice.mp3" preload="auto"></audio>
+<audio id="spinSound" src="sounds/spin.mp3" preload="auto"></audio>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
