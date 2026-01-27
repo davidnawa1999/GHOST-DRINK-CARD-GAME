@@ -1,0 +1,325 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #111;
+  color: #fff;
+}
+
+/* ================= TOP BAR ================= */
+.top-bar {
+  height: 50px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 12px;
+}
+
+.menu-btn {
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.title {
+  font-weight: bold;
+}
+
+/* ================= DUMMY GAME ================= */
+.game-dummy {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+  text-align: center;
+}
+
+/* ================= OVERLAY ================= */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ================= SIDE MENU ================= */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -280px;
+  width: 280px;
+  height: 100vh;
+  background: #fff;
+  color: #000;
+  z-index: 20;
+  transition: left 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.menu-header {
+  padding: 16px;
+  background: #ffcc00;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-list {
+  padding: 10px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.menu-item {
+  padding: 14px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu-item:hover {
+  background: #eee;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 480px;
+  background: #fff;
+  color: #000;
+  padding: 14px;              /* จาก 20px -> 14px */
+  border-radius: 14px;
+  text-align: left;
+  position: relative;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+/* close */
+.close-btn {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* ================= RULES PAGE 1 ================= */
+.rules-page {
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.rules-page h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.rule-item h4 {
+  margin-bottom: 4px;   /* เดิม browser จะประมาณ 12-16px */
+}
+
+/* กล่องแต่ละข้อ */
+.rule-item {
+  margin-bottom: 8px;        /* จาก 14px -> 8px */
+  padding: 8px;             /* จาก 12px -> 8px */
+  border-radius: 10px;
+  background: #f5f5f5;
+}
+
+/* ปุ่มดูรายละเอียด */
+.toggle-detail {
+  margin-top: 2px;          /* จาก 6px -> 2px */
+  background: #ffcc00;
+  border: none;
+  padding: 5px 10px;       /* จาก 6x12 -> 5x10 */
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* กล่องข้อความยาว */
+.rule-detail {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* footer */
+.rules-footer {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.rules-footer button {
+  padding: 10px 14px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ================= RULES PAGE 2 ================= */
+.rules-page-2 {
+  font-size: 13px;     /* ลดเล็กนิดเดียว */
+  line-height: 1.6;
+}
+
+.rules-page-2 h3 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.rules-note {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ================= CARD GRID ================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 6px;
+  row-gap: 0px;          
+  margin: 8px 0;   
+}
+
+.card-grid img {
+  width: 100%;
+  border-radius: 6px;
+  cursor: pointer;
+  transform: scale(0.92);
+    margin-bottom: -6px;
+}
+
+
+
+/* ================= ZOOM CARD ================= */
+.card-zoom {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-zoom img {
+  width: 70%;
+  max-width: 320px;
+  border-radius: 12px;
+}
+
+/* ================= SUPPORT ================= */
+.support-page {
+  text-align: center;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* เฉพาะหัวข้อ */
+.support-title {
+  text-align: center;
+  margin-top: 0;
+}
+
+/* กล่องข้อความหลัก */
+.support-text {
+  margin-bottom: 8px;
+}
+
+/* QR */
+.qr-container {
+  margin: 6px 0;
+}
+
+.qr-container img {
+  width: 160px;
+}
+
+/* กล่องธนาคาร */
+.support-bank {
+  margin-top: 6px;
+}
+
+.copy-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.copy-btn {
+  padding: 4px 8px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* note */
+.support-note {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* ================= TOAST ================= */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 50;
+  opacity: 0.9;
+}
+
+/* ================= SOUND TOGGLE ================= */
+.sound-toggle {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  background: #000;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  z-index: 9800;
+  opacity: 0.85;
+}
+
+.sound-toggle:hover {
+  opacity: 1;
+}
