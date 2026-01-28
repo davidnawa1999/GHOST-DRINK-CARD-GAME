@@ -146,7 +146,7 @@ function showThankYouFlow() {
   const modalBody = document.getElementById("modalBody");
   const overlay = document.getElementById("overlay");
 
-  modalTitle.textContent = "ขอบคุณมากครับ ❤️";
+  modalTitle.innerHTML = `<div class="thankyou-title">ขอบคุณมากครับ ❤️</div>`;
 
   modalBody.innerHTML = `
     <div style="text-align:center; line-height:1.6;">
@@ -184,3 +184,4 @@ function goSupport() {
     alert("openPage not found");
   }
 }
+
